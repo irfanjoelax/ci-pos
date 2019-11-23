@@ -36,6 +36,15 @@ class User_model extends CI_Model
       }
    }
 
+   public function go_update_password($id)
+   {
+      $data = array(
+         'pass_user'    => password_hash($this->input->post('password1', TRUE), PASSWORD_DEFAULT),
+      );
+
+      return $this->db->where('id_user', $id)->update($this->_table, $data);
+   }
+
    /**
     * function membuat upload image yang hanya dapat diakses di dalam class ini
     * dan terdapat fitur untuk compress ukuran pixel gambar

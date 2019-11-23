@@ -57,3 +57,4 @@ $route['translate_uri_dashes'] = FALSE;
 $route['login'] = 'auth';
 $route['seeder-user'] = 'exe/seeder_user';
 $route['seeder-role'] = 'exe/seeder_role';
+$route['change-password'] = 'auth/change_password';

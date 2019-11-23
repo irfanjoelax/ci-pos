@@ -96,6 +96,70 @@ class Auth extends CI_Controller
       }
    }
 
+   // function untuk mengubah data profil user admin yang login
+   public function change_password()
+   {
+      // cek session login
+      $session = $this->session->userdata('role_id');
+
+      if (empty($session)) {
+         redirect(site_url('/'));
+      } else {
+         $this->form_validation->set_rules('password1', 'New Password', 'required|trim|min_length[6]|matches[password2]', [
+            'matches' => "New password and repeat don't match",
+            'min_length' => "New password too short",
+         ]);
+         $this->form_validation->set_rules('password2', 'Repeat Password', 'required|trim|matches[password1]');
+
+         if ($this->form_validation->run() == FALSE) {
+            if ($session == 1) {
+               // load view modular
+               $this->load->view('templates/header');
+               $this->load->view('templates/sidebar_admin');
+               $this->load->view('exe/password');
+               $this->load->view('templates/footer');
+               $this->load->view('templates/script');
+            } elseif ($session == 2) {
+               // load view modular
+               $this->load->view('templates/header');
+               $this->load->view('templates/sidebar_opt');
+               $this->load->view('exe/password');
+               $this->load->view('templates/footer');
+               $this->load->view('templates/script');
+            }
+         } else {
+            $id_user = $this->session->userdata('id_user');
+            $update  = $this->user_model->go_update_password($id_user);
+
+            if ($update) {
+               $where = array(
+                  'id_user'   => $id_user,
+               );
+
+               $user = $this->user_model->get_where($where);
+
+               $data_session = array(
+                  'id_user'      => $user['id_user'],
+                  'name_user'    => $user['name_user'],
+                  'email_user'   => $user['email_user'],
+                  'img_user'     => $user['img_user'],
+                  'role_id'      => $user['role_id'],
+               );
+
+               $this->session->set_userdata($data_session);
+
+               $this->session->set_flashdata('message', '<div class="alert alert-success alert-dismissible fade show" role="alert"><strong>Congratulation !</strong> Your password has been successfully updated <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+
+               if ($user['role_id'] == 1) {
+                  redirect(site_url('admin/dashboard'));
+               } else  if ($user['role_id'] == 2) {
+                  redirect(site_url('operator/dashboard'));
+               }
+            }
+         }
+      }
+   }
+
    public function change_profile($id_user)
    {
       if (!empty($_FILES["image"]["name"])) {
