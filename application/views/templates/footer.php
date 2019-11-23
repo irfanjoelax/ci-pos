@@ -1,9 +1,9 @@
 <!-- Logout Modal-->
-<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave ?</h5>
                 <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>
@@ -12,8 +12,12 @@
                 Select "Logout" below if you are ready to end your current session.
             </div>
             <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="login.html">Logout</a>
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">
+                    <i class="fa fa-window-close"></i> &nbsp; Cancel
+                </button>
+                <a class="btn btn-primary" href="<?= site_url('auth/logout') ?>">
+                    <i class="fa fa-sign-out-alt"></i> &nbsp; Logout
+                </a>
             </div>
         </div>
     </div>
@@ -35,3 +39,10 @@
 <!-- Page level custom scripts -->
 <script src="<?= base_url() ?>/asset/js/demo/chart-area-demo.js"></script>
 <script src="<?= base_url() ?>/asset/js/demo/chart-pie-demo.js"></script>
+<script>
+    // Add the following code if you want the name of the file appear on select
+    $(".custom-file-input").on("change", function() {
+        var fileName = $(this).val().split("\\").pop();
+        $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+    });
+</script>

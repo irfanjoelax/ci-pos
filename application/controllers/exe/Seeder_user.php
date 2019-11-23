@@ -13,14 +13,14 @@ class Seeder_user extends CI_Controller
             'name_user'    => 'Administrator',
             'email_user'   => 'admin@admin.com',
             'pass_user'    => password_hash('password', PASSWORD_DEFAULT),
-            'img_user'     => 'default.jpg',
+            'img_user'     => 'default.png',
             'role_id'      => 1,
          ),
          array(
             'name_user'    => 'Operator',
             'email_user'   => 'opt@opt.com',
             'pass_user'    => password_hash('password', PASSWORD_DEFAULT),
-            'img_user'     => 'default.jpg',
+            'img_user'     => 'default.png',
             'role_id'      => 2,
          )
       );

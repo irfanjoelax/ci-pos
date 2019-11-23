@@ -9,7 +9,7 @@
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
         <div class="sidebar-brand-icon">
-          <i class="fas fa-home"></i>
+          <i class="fas fa-desktop"></i>
         </div>
         <div class="sidebar-brand-text mx-2">Administrator</div>
       </a>
@@ -28,20 +28,13 @@
       <hr class="sidebar-divider">
 
       <!-- Heading -->
-      <div class="sidebar-heading">Kategori</div>
+      <div class="sidebar-heading">Master</div>
 
       <!-- Nav Item - Tables -->
       <li class="nav-item">
         <a class="nav-link" href="<?= site_url('admin/data_barang') ?>">
           <i class="fas fa-fw fa-database"></i>
           <span>Data Barang</span>
-        </a>
-      </li>
-      <!-- Nav Item - Tables -->
-      <li class="nav-item">
-        <a class="nav-link" href="<?= site_url('admin/invoice') ?>">
-          <i class="fas fa-fw fa-file-invoice"></i>
-          <span>Data Invoice</span>
         </a>
       </li>
 
@@ -103,11 +96,11 @@
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?= $this->session->userdata('name_user') ?></span>
-                <img class="img-profile rounded-circle" src="<?= base_url('upload/' . $this->session->userdata('img_user')) ?>">
+                <img class="img-profile rounded-circle" src="<?= base_url('upload/user/' . $this->session->userdata('img_user')) ?>">
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="<?= site_url('auth/profile') ?>">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profile
                 </a>
