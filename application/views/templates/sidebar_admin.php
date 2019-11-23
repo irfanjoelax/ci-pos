@@ -32,9 +32,9 @@
 
       <!-- Nav Item - Tables -->
       <li class="nav-item">
-        <a class="nav-link" href="<?= site_url('admin/data_barang') ?>">
-          <i class="fas fa-fw fa-database"></i>
-          <span>Data Barang</span>
+        <a class="nav-link" href="<?= site_url('admin/satuan') ?>">
+          <i class="fas fa-fw fa-list"></i>
+          <span>Data Satuan</span>
         </a>
       </li>
 
