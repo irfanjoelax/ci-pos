@@ -10,7 +10,6 @@
       <div class="col-2">
          <div class="card shadow mb-4">
             <div class="card-body">
-               <div class="text-center">Image User</div>
                <img src="<?= base_url('upload/user/' . $this->session->userdata('img_user')) ?>" class="img-thumbnail rounded mx-auto d-block">
             </div>
          </div>

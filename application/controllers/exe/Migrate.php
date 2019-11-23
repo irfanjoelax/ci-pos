@@ -12,10 +12,7 @@ class Migrate extends CI_Controller
          show_error($this->migration->error_string());
       } else {
          $data['version'] = $version;
-
-         $this->load->view('exe/header_notif');
          $this->load->view('exe/notif_migration', $data);
-         $this->load->view('exe/footer_notif');
       }
    }
 }

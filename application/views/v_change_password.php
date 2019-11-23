@@ -7,10 +7,10 @@
 
    <!-- content -->
    <div class="row">
-      <div class="col-9">
+      <div class="col-7">
          <div class="card shadow mb-4">
             <div class="card-body">
-               <form action="<?= site_url('auth/change_password') ?>" method="post" enctype="multipart/form-data">
+               <form action="<?= site_url('change-password') ?>" method="post" enctype="multipart/form-data">
                   <div class="row">
                      <div class="col">
                         <div class="form-group">
@@ -30,7 +30,6 @@
                </form>
             </div>
          </div>
-
       </div>
    </div>
 </div>

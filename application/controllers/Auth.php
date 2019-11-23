@@ -4,14 +4,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Auth extends CI_Controller
 {
-   public function __construct()
-   {
-      parent::__construct();
-
-      // library load codeigniter
-      $this->load->library('form_validation');
-   }
-
    public function index()
    {
       $this->form_validation->set_rules('email', 'Email', 'required|trim|valid_email');
@@ -55,11 +47,11 @@ class Auth extends CI_Controller
             }
          } else {
             $this->session->set_flashdata('notif_login_false', '<div class="alert alert-danger alert-dismissible fade show" role="alert"><strong>Ooppps !</strong> your password wrong, please try again<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
-            redirect('auth');
+            redirect(site_url('/'));
          }
       } else {
          $this->session->set_flashdata('notif_login_false', '<div class="alert alert-danger alert-dismissible fade show" role="alert"><strong>Ooppps !</strong> your account not registered in system<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
-         redirect('auth');
+         redirect(site_url('/'));
       }
    }
 
@@ -82,16 +74,14 @@ class Auth extends CI_Controller
             // load view modular
             $this->load->view('templates/header');
             $this->load->view('templates/sidebar_admin');
-            $this->load->view('exe/profile');
+            $this->load->view('v_profile');
             $this->load->view('templates/footer');
-            $this->load->view('templates/script');
          } elseif ($session == 2) {
             // load view modular
             $this->load->view('templates/header');
-            $this->load->view('templates/sidebar_opt');
-            $this->load->view('exe/profile');
+            $this->load->view('templates/sidebar_operator');
+            $this->load->view('v_profile');
             $this->load->view('templates/footer');
-            $this->load->view('templates/script');
          }
       }
    }
@@ -106,7 +96,7 @@ class Auth extends CI_Controller
          redirect(site_url('/'));
       } else {
          $this->form_validation->set_rules('password1', 'New Password', 'required|trim|min_length[6]|matches[password2]', [
-            'matches' => "New password and repeat don't match",
+            'matches' => "New password and repeat password don't match",
             'min_length' => "New password too short",
          ]);
          $this->form_validation->set_rules('password2', 'Repeat Password', 'required|trim|matches[password1]');
@@ -116,16 +106,14 @@ class Auth extends CI_Controller
                // load view modular
                $this->load->view('templates/header');
                $this->load->view('templates/sidebar_admin');
-               $this->load->view('exe/password');
+               $this->load->view('v_change_password');
                $this->load->view('templates/footer');
-               $this->load->view('templates/script');
             } elseif ($session == 2) {
                // load view modular
                $this->load->view('templates/header');
-               $this->load->view('templates/sidebar_opt');
-               $this->load->view('exe/password');
+               $this->load->view('templates/sidebar_operator');
+               $this->load->view('v_change_password');
                $this->load->view('templates/footer');
-               $this->load->view('templates/script');
             }
          } else {
             $id_user = $this->session->userdata('id_user');

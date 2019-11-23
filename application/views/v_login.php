@@ -10,7 +10,7 @@
 
    <title><?= TITLE ?></title>
 
-   <link rel="shortcut icon" href="<?= base_url('asset/ci-icon.ico') ?>" type="image/x-icon">
+   <link rel="shortcut icon" href="<?= base_url('asset/favicon.png') ?>" type="image/x-icon">
 
    <!-- Custom fonts for this template-->
    <link href="<?= base_url('asset/vendor/fontawesome-free/css/all.min.css') ?>" rel="stylesheet" type="text/css">

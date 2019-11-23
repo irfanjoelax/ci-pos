@@ -21,10 +21,7 @@ class Seeder_role extends CI_Controller
 
       // load view modular
       $data['table'] = $this->_table;
-
-      $this->load->view('exe/header_notif');
       $this->load->view('exe/notif_seeder', $data);
-      $this->load->view('exe/footer_notif');
    }
 }
 

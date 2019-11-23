@@ -58,3 +58,5 @@ $route['login'] = 'auth';
 $route['seeder-user'] = 'exe/seeder_user';
 $route['seeder-role'] = 'exe/seeder_role';
 $route['change-password'] = 'auth/change_password';
+$route['admin/dashboard'] = 'admin/dashboard_admin';
+$route['operator/dashboard'] = 'operator/dashboard_operator';

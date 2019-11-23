@@ -29,9 +29,6 @@ class User_model extends CI_Model
             'img_user'     => $this->_upload_image(),
          );
 
-         $row_img = $this->db->where('id_user', $id)->get($this->_table)->row();
-         unlink("./upload/user/$row_img->img_user");
-
          return $this->db->where('id_user', $id)->update($this->_table, $data);
       }
    }
