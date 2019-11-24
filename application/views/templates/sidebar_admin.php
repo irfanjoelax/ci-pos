@@ -37,6 +37,12 @@
           <span>Data Satuan</span>
         </a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<?= site_url('admin/supplier') ?>">
+          <i class="fas fa-fw fa-truck"></i>
+          <span>Data Supplier</span>
+        </a>
+      </li>
 
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">

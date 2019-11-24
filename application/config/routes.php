@@ -55,6 +55,7 @@ $route['translate_uri_dashes'] = FALSE;
 
 // custom routing 
 $route['login'] = 'auth';
+$route['migrate/(:num)'] = 'exe/migrate/ver/$1';
 $route['seeder-user'] = 'exe/seeder_user';
 $route['seeder-role'] = 'exe/seeder_role';
 $route['change-password'] = 'auth/change_password';
