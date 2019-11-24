@@ -38,6 +38,12 @@
         </a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" href="<?= site_url('admin/product') ?>">
+          <i class="fas fa-fw fa-cubes"></i>
+          <span>Data Product</span>
+        </a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" href="<?= site_url('admin/supplier') ?>">
           <i class="fas fa-fw fa-truck"></i>
           <span>Data Supplier</span>
