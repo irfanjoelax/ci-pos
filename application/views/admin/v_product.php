@@ -14,14 +14,13 @@
       <div class="col">
          <div class="card shadow mb-4">
             <div class="card-body">
-               <table class="table table-sm table-bordered" id="dataTable" width="100%" cellspacing="0">
+               <table class="table table-sm table-bordered dataTable" width="100%" cellspacing="0">
                   <thead class="bg-dark text-white">
                      <tr align="center">
                         <th width="15">#</th>
                         <th>Product Name</th>
                         <th width="115">Buy</th>
                         <th width="115">Sale</th>
-                        <th width="40">Disk</th>
                         <th width="60">Stok</th>
                         <th width="130">Action</th>
                      </tr>
@@ -36,7 +35,6 @@
                            <td><?= $product->name_product ?></td>
                            <td class="text-right">Rp. <?= uang($product->beli_product) ?></td>
                            <td class="text-right">Rp. <?= uang($product->jual_product) ?></td>
-                           <td class="text-right"><?= $product->disk_product ?> %</td>
                            <td class="text-right"><?= uang($product->stok_product) ?></td>
                            <td align="center">
                               <a href="<?= site_url('admin/product/edit/' . $product->id_product) ?>" class="btn btn-sm btn-success">

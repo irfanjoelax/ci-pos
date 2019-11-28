@@ -51,6 +51,12 @@
       "serverside": true,
       "ordering": false,
    });
+
+   $('.dataTable').DataTable({
+      "processing": true,
+      "serverside": true,
+      "ordering": false,
+   });
 </script>
 
 </body>

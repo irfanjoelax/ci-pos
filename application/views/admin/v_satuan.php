@@ -14,7 +14,7 @@
       <div class="col-8">
          <div class="card shadow mb-4">
             <div class="card-body">
-               <table class="table table-sm table-bordered" id="dataTable" width="100%" cellspacing="0">
+               <table class="table table-sm table-bordered dataTable" width="100%" cellspacing="0">
                   <thead class="bg-dark text-white">
                      <tr align="center">
                         <th width="15">#</th>

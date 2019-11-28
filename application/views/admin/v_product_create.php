@@ -50,13 +50,6 @@
                      </div>
                      <div class="col-2">
                         <div class="form-group">
-                           <label class="font-weight-bold">Diskon</label>
-                           <input type="number" class="form-control" name="disk" id="disk" value="0">
-                           <?= form_error('disk', '<small class="text-danger pl-2">', '</small>') ?>
-                        </div>
-                     </div>
-                     <div class="col-2">
-                        <div class="form-group">
                            <label class="font-weight-bold">Stok</label>
                            <input type="number" class="form-control" name="stok" id="stok" value="0">
                            <?= form_error('stok', '<small class="text-danger pl-2">', '</small>') ?>

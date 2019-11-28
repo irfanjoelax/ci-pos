@@ -72,6 +72,33 @@ class Product extends CI_Controller
       $this->session->set_flashdata('message', '<div class="alert alert-danger alert-dismissible fade show" role="alert"><strong>Congratulation !</strong> data product has been successfully deleted <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
       redirect(site_url('admin/product'));
    }
+
+   // function untuk ambil data dari table database, parsing lewat javascript untuk datatable
+   public function data()
+   {
+      $results    = $this->product_model->get_all();
+      $data       = array();
+      $no         = 1;
+
+      foreach ($results as $list) {
+         $row    = array();
+
+         $row[]  = $list->name_product;
+         $row[]  = '<p align="right"> Rp. ' . uang($list->beli_product) . '</p>';
+         $row[]  = '
+               <center>
+                  <a href="' . site_url('admin/buy/add_cart/' . $list->id_product) . '" class="btn btn-sm btn-success">
+                     <i class="fa fa-check"></i> Choose
+                  </a>
+               </center>
+           ';
+
+         $data[] = $row;
+      }
+
+      $output = array("data" => $data);
+      echo json_encode($output);
+   }
 }
 
 /* End of file Product.php */

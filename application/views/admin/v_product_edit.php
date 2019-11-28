@@ -46,12 +46,6 @@
                      </div>
                      <div class="col-2">
                         <div class="form-group">
-                           <label class="font-weight-bold">Diskon</label>
-                           <input type="number" class="form-control" name="disk" id="disk" value="<?= $product->disk_product ?>">
-                        </div>
-                     </div>
-                     <div class="col-2">
-                        <div class="form-group">
                            <label class="font-weight-bold">Stok</label>
                            <input type="number" class="form-control" name="stok" id="stok" value="<?= $product->stok_product ?>">
                         </div>

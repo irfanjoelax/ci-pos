@@ -23,10 +23,6 @@ class Migration_create_products extends CI_Migration
          'jual_product' => array(
             'type' => 'DOUBLE',
          ),
-         'disk_product' => array(
-            'type' => 'INT',
-            'constraint' => 3
-         ),
          'stok_product' => array(
             'type' => 'INT',
             'constraint' => 5

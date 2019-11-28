@@ -12,6 +12,12 @@ class Product_model extends CI_Model
       return $this->db->get($this->_table)->result();
    }
 
+   public function get_id($id)
+   {
+      $this->db->where('id_product', $id)->limit(1);
+      return $this->db->get($this->_table)->row();
+   }
+
    public function get_where($data = array())
    {
       return $this->db->get_where($this->_table, $data)->row();
@@ -23,7 +29,6 @@ class Product_model extends CI_Model
          'name_product'   => strtoupper($this->input->post('name', TRUE)),
          'beli_product'   => $this->input->post('beli', TRUE),
          'jual_product'   => $this->input->post('jual', TRUE),
-         'disk_product'   => $this->input->post('disk', TRUE),
          'stok_product'   => $this->input->post('stok', TRUE),
          'satuan_id'      => $this->input->post('satuan', TRUE),
          'ket_product'    => $this->input->post('keterangan', TRUE),
@@ -38,7 +43,6 @@ class Product_model extends CI_Model
          'name_product'   => strtoupper($this->input->post('name', TRUE)),
          'beli_product'   => $this->input->post('beli', TRUE),
          'jual_product'   => $this->input->post('jual', TRUE),
-         'disk_product'   => $this->input->post('disk', TRUE),
          'stok_product'   => $this->input->post('stok', TRUE),
          'satuan_id'      => $this->input->post('satuan', TRUE),
          'ket_product'    => $this->input->post('keterangan', TRUE),
@@ -50,6 +54,11 @@ class Product_model extends CI_Model
    public function go_delete($id)
    {
       return $this->db->where('id_product', $id)->delete($this->_table);
+   }
+
+   public function go_update_stok($id, $data = array())
+   {
+      return $this->db->where('id_product', $id)->update($this->_table, $data);
    }
 }
 
