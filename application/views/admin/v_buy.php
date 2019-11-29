@@ -11,7 +11,7 @@
             ?>
             <a href="<?= site_url('admin/buy/cart/' . $this->session->userdata('buy_id')) ?>" class="d-none d-sm-inline-block btn btn-sm btn-warning shadow-sm text-white"><i class="fas fa-eye fa-sm text-white"></i> Live Transaction</a>
          <?php endif; ?>
-         <button data-toggle="modal" data-target="#supplierModal" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm text-white"><i class="fas fa-plus fa-sm text-white"></i> Add Buy</button>
+         <button data-toggle="modal" data-target="#supplierModal" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm text-white"><i class="fas fa-plus fa-sm text-white"></i> Add Buy Transaction</button>
       </div>
    </div>
    <!-- end Page Heading -->
