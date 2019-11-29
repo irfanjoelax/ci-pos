@@ -6,6 +6,12 @@ class User_model extends CI_Model
 {
    private $_table = 'users';
 
+   public function get_all()
+   {
+      $this->db->order_by('id_user', 'DESC');
+      return $this->db->get($this->_table)->result();
+   }
+
    public function get_where($data = array())
    {
       return $this->db->get_where($this->_table, $data)->row_array();
@@ -72,6 +78,24 @@ class User_model extends CI_Model
 
          return $this->upload->data("file_name");
       }
+   }
+
+   public function go_insert()
+   {
+      $data = array(
+         'name_user'    => strtoupper($this->input->post('name', TRUE)),
+         'email_user'   => $this->input->post('email', TRUE),
+         'pass_user'    => password_hash('123456', PASSWORD_DEFAULT),
+         'img_user'     => 'default.png',
+         'role_id'      => $this->input->post('role', TRUE)
+      );
+
+      return $this->db->insert($this->_table, $data);
+   }
+
+   public function go_delete($id)
+   {
+      return $this->db->where('id_user', $id)->delete($this->_table);
    }
 }
 
