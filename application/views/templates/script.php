@@ -59,7 +59,7 @@
          "processing": true,
          "serverside": true,
          "ajax": {
-            "url": "<?= site_url('admin/buy/data_cart/' . $this->session->userdata('buy_id')) ?>",
+            "url": "<?= site_url('admin/buy/data_cart') ?>",
             "type": "GET"
          }
       }).on('draw.dt', function() {

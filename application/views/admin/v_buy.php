@@ -6,10 +6,8 @@
    <div class="d-sm-flex align-items-center justify-content-between mb-4">
       <h1 class="h3 mb-0 text-gray-800"><i class="fa fa-cart-plus"></i> Data Buy</h1>
       <div>
-         <?php
-         if (!empty($this->session->userdata('buy_id'))) :
-            ?>
-            <a href="<?= site_url('admin/buy/cart/' . $this->session->userdata('buy_id')) ?>" class="d-none d-sm-inline-block btn btn-sm btn-warning shadow-sm text-white"><i class="fas fa-eye fa-sm text-white"></i> Live Transaction</a>
+         <?php if (!empty($this->session->userdata('sess_id'))) : ?>
+            <a href="<?= site_url('admin/buy/cart/' . $this->session->userdata('sess_id')) ?>" class="d-none d-sm-inline-block btn btn-sm btn-warning shadow-sm text-white"><i class="fas fa-eye fa-sm text-white"></i> Live Transaction</a>
          <?php endif; ?>
          <button data-toggle="modal" data-target="#supplierModal" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm text-white"><i class="fas fa-plus fa-sm text-white"></i> Add Buy Transaction</button>
       </div>

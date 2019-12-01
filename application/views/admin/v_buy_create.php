@@ -82,7 +82,7 @@
                            <button type="submit" class="btn btn-primary">
                               <i class="fa fa-save"></i> &nbsp; Save Transaction
                            </button>
-                           <a href="<?= site_url('admin/buy/delete/' . $this->session->userdata('buy_id')) ?>" class="btn btn-danger">
+                           <a href="<?= site_url('admin/buy/delete/' . $this->session->userdata('sess_id')) ?>" class="btn btn-danger">
                               <i class="fa fa-undo"></i> &nbsp; Cancel / Back
                            </a>
                         </div>

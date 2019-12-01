@@ -2,18 +2,18 @@
 
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Migration_create_buy_details extends CI_Migration
+class Migration_create_carts extends CI_Migration
 {
    public function up()
    {
       $this->dbforge->add_field(array(
-         'id_bdet' => array(
+         'id_cart' => array(
             'type' => 'INT',
             'constraint' => 11,
             'unsigned' => TRUE,
             'auto_increment' => TRUE
          ),
-         'buy_id' => array(
+         'session_id' => array(
             'type' => 'INT',
             'constraint' => 11,
             'unsigned' => TRUE
@@ -35,14 +35,14 @@ class Migration_create_buy_details extends CI_Migration
             'constraint' => 5
          ),
       ));
-      $this->dbforge->add_key('id_bdet', TRUE);
-      $this->dbforge->create_table('buy_details');
+      $this->dbforge->add_key('id_cart', TRUE);
+      $this->dbforge->create_table('carts');
    }
 
    public function down()
    {
-      $this->dbforge->drop_table('buy_details');
+      $this->dbforge->drop_table('carts');
    }
 }
 
-/* End of file create_buy_details.php */
+/* End of file create_cart.php */
