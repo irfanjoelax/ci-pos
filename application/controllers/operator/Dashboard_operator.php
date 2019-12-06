@@ -11,7 +11,7 @@ class Dashboard_operator extends CI_Controller
       // cek session login
       $session = $this->session->userdata('role_id');
 
-      if (empty($session) or $session != 2) {
+      if (empty($session) and $session != 2) {
          redirect(site_url('/'));
       }
    }
