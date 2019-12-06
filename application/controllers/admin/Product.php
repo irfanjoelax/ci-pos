@@ -8,6 +8,9 @@ class Product extends CI_Controller
    {
       parent::__construct();
 
+      // load library
+      $this->load->library("PHPExcel");
+
       // cek session login
       $session = $this->session->userdata('role_id');
 
@@ -98,6 +101,35 @@ class Product extends CI_Controller
 
       $output = array("data" => $data);
       echo json_encode($output);
+   }
+
+
+   public function import()
+   {
+      $this->load->view('templates/header');
+      $this->load->view('templates/sidebar_admin');
+      $this->load->view('admin/v_product_import');
+      $this->load->view('templates/footer');
+   }
+
+   public function go_import()
+   {
+      $config['upload_path'] = './upload/excel';
+      $config['allowed_types'] = 'xlsx|xls';
+
+      $this->load->library('upload', $config);
+
+      if (!$this->upload->do_upload('file_import')) {
+         $error = array('error' => $this->upload->display_errors());
+      } else {
+         $data = array('upload_data' => $this->upload->data());
+         $upload_data = $this->upload->data(); //Mengambil detail data yang di upload
+         $filename = $upload_data['file_name']; //Nama File
+         $this->product_model->upload_data($filename);
+         unlink('./upload/excel/' . $filename);
+         $this->session->set_flashdata('message', '<div class="alert alert-primary alert-dismissible fade show" role="alert"><strong>Congratulation !</strong> data product has been successfully created <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+         redirect(site_url('admin/product'));
+      }
    }
 }
 

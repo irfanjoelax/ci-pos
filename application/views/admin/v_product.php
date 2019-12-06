@@ -5,7 +5,10 @@
    <!-- Page Heading -->
    <div class="d-sm-flex align-items-center justify-content-between mb-4">
       <h1 class="h3 mb-0 text-gray-800"><i class="fa fa-cubes"></i> Data Product</h1>
-      <a href="<?= site_url('admin/product/create') ?>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-plus fa-sm text-white"></i> Add Product</a>
+      <div>
+         <a href="<?= site_url('admin/product/create') ?>" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-plus fa-sm text-white"></i> Add Product</a>
+         <a href="<?= site_url('admin/product/import') ?>" class="d-none d-sm-inline-block btn btn-sm btn-warning shadow-sm"><i class="fas fa-file-excel fa-sm text-white"></i> Import Product</a>
+      </div>
    </div>
    <!-- end Page Heading -->
 
