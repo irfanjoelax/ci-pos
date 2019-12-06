@@ -43,7 +43,7 @@ class Auth extends CI_Controller
             if ($user['role_id'] == 1) {
                redirect(site_url('admin/dashboard'));
             } else  if ($user['role_id'] == 2) {
-               redirect(site_url('operator/dashboard'));
+               redirect(site_url('operator/dashboard_operator'));
             }
          } else {
             $this->session->set_flashdata('notif_login_false', '<div class="alert alert-danger alert-dismissible fade show" role="alert"><strong>Ooppps !</strong> your password wrong, please try again<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');

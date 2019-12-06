@@ -57,7 +57,7 @@
                         <td class="text-right" colspan="2"><strong>Rp. <?= uang($buy_detail->bayar_buy) ?>,-</strong></td>
                      </tr>
                      <tr>
-                        <td class="text-right" colspan="5"><strong><?= terbilang($buy_detail->bayar_buy) ?> rupiah</strong></td>
+                        <td class="text-right" colspan="5"><strong><?= ucwords(terbilang($buy_detail->bayar_buy)) ?> Rupiah</strong></td>
                      </tr>
                   </tbody>
                </table>

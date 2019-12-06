@@ -2,7 +2,7 @@
 
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Dashboard extends CI_Controller
+class Dashboard_operator extends CI_Controller
 {
    public function __construct()
    {
@@ -20,10 +20,9 @@ class Dashboard extends CI_Controller
    {
       // load view modular
       $this->load->view('templates/header');
-      $this->load->view('templates/sidebar_opt');
+      $this->load->view('templates/sidebar_operator');
       $this->load->view('operator/v_dashboard');
       $this->load->view('templates/footer');
-      $this->load->view('templates/script');
    }
 }
 
