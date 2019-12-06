@@ -17,7 +17,7 @@
                <div class="card-body">
                   <div class="row">
                      <div class="col-6">
-                        <input type="text" name="supplier" id="supplier" class="form-control" value="Enter name customer here..">
+                        <input type="text" name="name" id="name" class="form-control" value="<?= $this->session->userdata('name_customer') ?>">
                      </div>
                      <div class="col-3">
                         <button type="button" class="btn btn-block btn-success" data-toggle="modal" data-target="#productModal">

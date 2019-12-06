@@ -33,7 +33,8 @@ class Sell extends CI_Controller
         $sell_data = $this->sell_model->get_last();
 
         $sess_sell = array(
-            'sess_id'      => $sell_data->id_sell,
+            'sess_id'       => $sell_data->id_sell,
+            'name_customer' => $sell_data->name_customer,
         );
 
         $this->session->set_userdata($sess_sell);
@@ -49,7 +50,7 @@ class Sell extends CI_Controller
 
         foreach ($carts as $cart) {
             $data = array(
-                'sell_id'          => $sess_id,
+                'sell_id'         => $sess_id,
                 'product_id'      => $cart->product_id,
                 'product_name'    => $cart->product_name,
                 'product_price'   => $cart->product_price,

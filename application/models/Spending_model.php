@@ -41,6 +41,13 @@ class Spending_model extends CI_Model
    {
       return $this->db->where('id_spend', $id)->delete($this->_table);
    }
+
+   public function total_sum()
+   {
+      $this->db->select('SUM(total_spend) as total_spending');
+      $this->db->from($this->_table);
+      return $this->db->get()->row()->total_spending;
+   }
 }
 
 /* End of file Spending_model.php */

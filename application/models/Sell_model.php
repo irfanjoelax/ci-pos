@@ -41,10 +41,11 @@ class Sell_model extends CI_Model
     public function go_update($id_sell)
     {
         $data = array(
-            'item_sell'   => $this->input->post('item', TRUE),
-            'total_sell'  => $this->input->post('total', TRUE),
-            'disk_sell'   => $this->input->post('disk', TRUE),
-            'bayar_sell'  => $this->input->post('bayar', TRUE),
+            'name_customer' => strtoupper($this->input->post('name', TRUE)),
+            'item_sell'     => $this->input->post('item', TRUE),
+            'total_sell'    => $this->input->post('total', TRUE),
+            'disk_sell'     => $this->input->post('disk', TRUE),
+            'bayar_sell'    => $this->input->post('bayar', TRUE),
         );
 
         return $this->db->where('id_sell', $id_sell)->update($this->_table, $data);
@@ -53,6 +54,13 @@ class Sell_model extends CI_Model
     public function go_delete($id)
     {
         return $this->db->where('id_sell', $id)->delete($this->_table);
+    }
+
+    public function total_sum()
+    {
+        $this->db->select('SUM(bayar_sell) as total_sell');
+        $this->db->from($this->_table);
+        return $this->db->get()->row()->total_sell;
     }
 }
 

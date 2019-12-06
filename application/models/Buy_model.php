@@ -80,6 +80,13 @@ class Buy_model extends CI_Model
    {
       return $this->db->where('id_buy', $id)->delete($this->_table);
    }
+
+   public function total_sum()
+   {
+      $this->db->select('SUM(bayar_buy) as total_buy');
+      $this->db->from($this->_table);
+      return $this->db->get()->row()->total_buy;
+   }
 }
 
 /* End of file Buy_model.php */

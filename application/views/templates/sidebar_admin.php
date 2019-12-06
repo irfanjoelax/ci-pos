@@ -70,6 +70,12 @@
         </a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" href="<?= site_url('admin/sell') ?>">
+          <i class="fas fa-fw fa-file"></i>
+          <span>Data Selling</span>
+        </a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" href="<?= site_url('admin/spending') ?>">
           <i class="fas fa-fw fa-credit-card"></i>
           <span>Data Spending</span>
