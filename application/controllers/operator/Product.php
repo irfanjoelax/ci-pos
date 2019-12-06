@@ -40,6 +40,34 @@ class Product extends CI_Controller
         $this->load->view('operator/v_product_show', $parsing);
         $this->load->view('templates/footer');
     }
+
+    // function untuk ambil data dari table database, parsing lewat javascript untuk datatable
+    public function data()
+    {
+        $results    = $this->product_model->get_all();
+        $data       = array();
+        $no         = 1;
+
+        foreach ($results as $list) {
+            $row    = array();
+
+            $row[]  = $list->name_product;
+            $row[]  = '<p align="right"> Rp. ' . uang($list->jual_product) . '</p>';
+            $row[]  = '<p align="right">' . uang($list->stok_product) . '</p>';
+            $row[]  = '
+               <center>
+                  <a href="' . site_url('operator/sell/add_cart/' . $list->id_product) . '" class="btn btn-sm btn-success">
+                     <i class="fa fa-check"></i> Choose
+                  </a>
+               </center>
+           ';
+
+            $data[] = $row;
+        }
+
+        $output = array("data" => $data);
+        echo json_encode($output);
+    }
 }
 
 /* End of file Product.php */
