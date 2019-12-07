@@ -106,9 +106,11 @@ class Product extends CI_Controller
 
    public function import()
    {
+      $parsing['satuans'] = $this->satuan_model->get_all();
+
       $this->load->view('templates/header');
       $this->load->view('templates/sidebar_admin');
-      $this->load->view('admin/v_product_import');
+      $this->load->view('admin/v_product_import', $parsing);
       $this->load->view('templates/footer');
    }
 

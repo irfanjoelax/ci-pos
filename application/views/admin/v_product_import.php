@@ -7,12 +7,12 @@
 
    <!-- content -->
    <div class="row">
-      <div class="col-10">
+      <div class="col-8">
          <div class="card shadow mb-4">
             <div class="card-body">
                <form action="<?= site_url('admin/product/go_import') ?>" method="post" enctype="multipart/form-data">
                   <div class="row">
-                     <div class="col-9">
+                     <div class="col-8">
                         <div class="form-group">
                            <label class="font-weight-bold">File Import</label>
                            <div class="custom-file">
@@ -22,11 +22,11 @@
                            </div>
                         </div>
                      </div>
-                     <div class="col-3">
+                     <div class="col-4">
                         <div class="form-group">
                            <label class="font-weight-bold">Example File Excel</label>
                            <div class="custom-file">
-                              <a href="<?= site_url('admin/product') ?>" class="btn btn-success">
+                              <a href="<?= base_url('asset/example_import_excel.xlsx') ?>" class="btn btn-block btn-success">
                                  <i class="fa fa-download"></i> &nbsp; Download here
                               </a>
                            </div>
@@ -43,9 +43,32 @@
             </div>
          </div>
       </div>
-
+      <div class="col-4">
+         <div class="card shadow mb-4">
+            <div class="card-body">
+               <h4 class="text-center">List Satuan</h4>
+               <hr>
+               <table class="table table-sm table-bordered table-striped" width="100%" cellspacing="0">
+                  <thead class="bg-dark text-white text-center">
+                     <tr>
+                        <th width="80">ID</th>
+                        <th>Satuan Name</th>
+                     </tr>
+                  </thead>
+                  <tbody class="text-center">
+                     <?php
+                     foreach ($satuans as $satuan) :
+                        ?>
+                        <tr>
+                           <td><?= $satuan->id_satuan ?></td>
+                           <td><?= $satuan->name_satuan ?></td>
+                        </tr>
+                     <?php endforeach; ?>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+      </div>
    </div>
-
-   <!-- end page table -->
 </div>
 <!-- end container-fluid -->
