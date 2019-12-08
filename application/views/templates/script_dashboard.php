@@ -86,7 +86,7 @@
             pointHoverBorderColor: "rgba(78, 115, 223, 1)",
             pointHitRadius: 10,
             pointBorderWidth: 2,
-            data: <?= json_encode($data_pendapatan) ?>,
+            data: <?= json_encode($data_penjualan) ?>,
          }],
       },
       options: {
