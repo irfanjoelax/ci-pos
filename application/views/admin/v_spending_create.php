@@ -7,23 +7,32 @@
 
    <!-- content -->
    <div class="row">
-      <div class="col-10">
+      <div class="col-8">
          <div class="card shadow mb-4">
             <div class="card-body">
                <form action="<?= site_url('admin/spending/create') ?>" method="post" enctype="multipart/form-data">
                   <div class="row">
-                     <div class="col-8">
+                     <div class="col-9">
                         <div class="form-group">
                            <label class="font-weight-bold">Type Spending</label>
                            <input type="text" class="form-control" name="name" id="name" placeholder="Enter type of spending here.." value="<?= set_value('name') ?>">
                            <?= form_error('name', '<small class="text-danger pl-2">', '</small>') ?>
                         </div>
                      </div>
-                     <div class="col-4">
+                  </div>
+                  <div class="row">
+                     <div class="col-5">
                         <div class="form-group">
                            <label class="font-weight-bold">Nominal</label>
                            <input type="number" class="form-control" name="total" id="total" placeholder="nominal spending here.." value="<?= set_value('total') ?>">
                            <?= form_error('total', '<small class="text-danger pl-2">', '</small>') ?>
+                        </div>
+                     </div>
+                     <div class="col-5">
+                        <div class="form-group">
+                           <label class="font-weight-bold">Date</label>
+                           <input type="date" class="form-control" name="date" id="date" value="<?= set_value('date') ?>">
+                           <?= form_error('date', '<small class="text-danger pl-2">', '</small>') ?>
                         </div>
                      </div>
                   </div>

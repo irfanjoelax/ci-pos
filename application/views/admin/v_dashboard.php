@@ -98,7 +98,7 @@
                      <div class="h6 mb-0 font-weight-bold text-gray-800">Rp. <?= uang($total_income) ?>,-</div>
                   </div>
                   <div class="col-auto">
-                     <i class="fas fa-comments fa-2x text-gray-300"></i>
+                     <i class="fas fa-dollar fa-2x text-gray-300"></i>
                   </div>
                </div>
             </div>

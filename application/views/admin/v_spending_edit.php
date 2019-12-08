@@ -12,16 +12,24 @@
             <div class="card-body">
                <form action="<?= site_url('admin/spending/update/' . $spending->id_spend) ?>" method="post" enctype="multipart/form-data">
                   <div class="row">
-                     <div class="col-8">
+                     <div class="col-9">
                         <div class="form-group">
                            <label class="font-weight-bold">Type Spending</label>
                            <input type="text" class="form-control" name="name" id="name" value="<?= $spending->name_spend ?>">
                         </div>
                      </div>
-                     <div class="col-4">
+                  </div>
+                  <div class="row">
+                     <div class="col-5">
                         <div class="form-group">
                            <label class="font-weight-bold">Nominal</label>
                            <input type="number" class="form-control" name="total" id="total" value="<?= $spending->total_spend ?>">
+                        </div>
+                     </div>
+                     <div class="col-5">
+                        <div class="form-group">
+                           <label class="font-weight-bold">Date</label>
+                           <input type="date" class="form-control" name="date" id="date" value="<?= $spending->tgl_spend ?>">
                         </div>
                      </div>
                   </div>

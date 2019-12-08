@@ -20,7 +20,7 @@ class Spending_model extends CI_Model
    public function go_insert()
    {
       $data = array(
-         'tgl_spend'    => date('Y-m-d'),
+         'tgl_spend'    => $this->input->post('date', TRUE),
          'name_spend'   => strtoupper($this->input->post('name', TRUE)),
          'total_spend'  => $this->input->post('total', TRUE),
       );
@@ -31,6 +31,7 @@ class Spending_model extends CI_Model
    public function go_update($id)
    {
       $data = array(
+         'tgl_spend'    => $this->input->post('date', TRUE),
          'name_spend'   => strtoupper($this->input->post('name', TRUE)),
          'total_spend'  => $this->input->post('total', TRUE),
       );

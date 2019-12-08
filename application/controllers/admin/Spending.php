@@ -31,6 +31,7 @@ class Spending extends CI_Controller
    {
       $this->form_validation->set_rules('name', 'Type of spending', 'required|trim');
       $this->form_validation->set_rules('total', 'Nominal', 'required|numeric');
+      $this->form_validation->set_rules('date', 'Date', 'required');
 
       if ($this->form_validation->run() == FALSE) {
          // load view modular

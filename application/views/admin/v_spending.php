@@ -11,13 +11,14 @@
 
    <!-- content -->
    <div class="row">
-      <div class="col-10">
+      <div class="col-11">
          <div class="card shadow mb-4">
             <div class="card-body">
                <table class="table table-sm table-bordered dataTable" width="100%" cellspacing="0">
                   <thead class="bg-dark text-white">
                      <tr align="center">
                         <th width="15">#</th>
+                        <th width="130">Date</th>
                         <th>Type Spending</th>
                         <th width="200">Nominal</th>
                         <th width="130">Action</th>
@@ -29,10 +30,11 @@
                      foreach ($spendings as $spending) :
                         ?>
                         <tr>
-                           <td><?= $no++ ?></td>
+                           <td class="text-center"><?= $no++ ?></td>
+                           <td class="text-center"><?= tanggal($spending->tgl_spend) ?></td>
                            <td><?= $spending->name_spend ?></td>
                            <td class="text-right">Rp. <?= uang($spending->total_spend) ?></td>
-                           <td class="text-right">
+                           <td class="text-center">
                               <a href="<?= site_url('admin/spending/edit/' . $spending->id_spend) ?>" class="btn btn-sm btn-success">
                                  <i class="fa fa-edit"></i> Edit
                               </a>
