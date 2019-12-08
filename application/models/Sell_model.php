@@ -62,6 +62,14 @@ class Sell_model extends CI_Model
         $this->db->from($this->_table);
         return $this->db->get()->row()->total_sell;
     }
+
+    public function total_date($tanggal)
+    {
+        $this->db->select('SUM(bayar_sell) as total_sell');
+        $this->db->like('tgl_sell', $tanggal, 'after');
+        $this->db->from($this->_table);
+        return $this->db->get()->row()->total_sell;
+    }
 }
 
 /* End of file Sell_model.php */

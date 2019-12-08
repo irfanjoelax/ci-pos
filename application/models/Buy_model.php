@@ -87,6 +87,14 @@ class Buy_model extends CI_Model
       $this->db->from($this->_table);
       return $this->db->get()->row()->total_buy;
    }
+
+   public function total_date($tanggal)
+   {
+      $this->db->select('SUM(bayar_buy) as total_buy');
+      $this->db->like('tgl_buy', $tanggal, 'after');
+      $this->db->from($this->_table);
+      return $this->db->get()->row()->total_buy;
+   }
 }
 
 /* End of file Buy_model.php */

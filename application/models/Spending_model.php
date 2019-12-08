@@ -20,6 +20,7 @@ class Spending_model extends CI_Model
    public function go_insert()
    {
       $data = array(
+         'tgl_spend'    => date('Y-m-d'),
          'name_spend'   => strtoupper($this->input->post('name', TRUE)),
          'total_spend'  => $this->input->post('total', TRUE),
       );
@@ -45,6 +46,14 @@ class Spending_model extends CI_Model
    public function total_sum()
    {
       $this->db->select('SUM(total_spend) as total_spending');
+      $this->db->from($this->_table);
+      return $this->db->get()->row()->total_spending;
+   }
+
+   public function total_date($tanggal)
+   {
+      $this->db->select('SUM(total_spend) as total_spending');
+      $this->db->like('tgl_spend', $tanggal, 'after');
       $this->db->from($this->_table);
       return $this->db->get()->row()->total_spending;
    }
