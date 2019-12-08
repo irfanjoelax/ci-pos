@@ -13,6 +13,9 @@ class Migration_create_spending extends CI_Migration
             'unsigned' => TRUE,
             'auto_increment' => TRUE
          ),
+         'tgl_spend' => array(
+            'type' => 'DATE'
+         ),
          'name_spend' => array(
             'type' => 'VARCHAR',
             'constraint' => '255'
