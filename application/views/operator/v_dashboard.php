@@ -27,7 +27,7 @@
                <h2 class="card-title">Welcome to <?= TITLE ?></h2>
                <p class="card-text">Your active login in this application is</p>
                <a href="#" class="btn btn-lg btn-primary">
-                  <i class="fa fa-user"></i> &nbsp;Operator
+                  <i class="fa fa-user"></i> &nbsp; Operator
                </a>
             </div>
          </div>

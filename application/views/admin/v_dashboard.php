@@ -23,7 +23,9 @@
             <div class="card-body">
                <h3 class="card-title">Welcome to <?= TITLE ?></h3>
                <p class="card-text">Your active login in this application as</p>
-               <a href="#" class="btn btn-lg btn-danger">Administrator</a>
+               <a href="#" class="btn btn-lg btn-danger">
+                  <i class="fa fa-user"></i> &nbsp; Administrator
+               </a>
             </div>
          </div>
       </div>
