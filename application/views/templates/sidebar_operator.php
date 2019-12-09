@@ -9,9 +9,9 @@
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
         <div class="sidebar-brand-icon">
-          <i class="fas fa-desktop"></i>
+          <i class="fas fa-home"></i>
         </div>
-        <div class="sidebar-brand-text mx-2">Administrator</div>
+        <div class="sidebar-brand-text mx-2">Operator</div>
       </a>
 
       <!-- Divider -->

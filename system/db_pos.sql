@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 06, 2019 at 06:45 AM
+-- Generation Time: Dec 09, 2019 at 04:33 AM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.11
 
@@ -38,14 +38,6 @@ CREATE TABLE `buys` (
   `bayar_buy` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `buys`
---
-
-INSERT INTO `buys` (`id_buy`, `tgl_buy`, `supplier_id`, `item_buy`, `total_buy`, `disk_buy`, `bayar_buy`) VALUES
-(2, '2019-12-06', 2, 1, 29000, 3, 28275),
-(4, '2019-12-06', 2, 2, 89500, 5, 85025);
-
 -- --------------------------------------------------------
 
 --
@@ -60,15 +52,6 @@ CREATE TABLE `buy_details` (
   `product_price` double NOT NULL,
   `product_qty` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `buy_details`
---
-
-INSERT INTO `buy_details` (`id_bdet`, `buy_id`, `product_id`, `product_name`, `product_price`, `product_qty`) VALUES
-(1, 2, 2, 'PARACETAMOL 500MG @10 TAB', 145, 200),
-(2, 4, 3, 'ASAM MEFENAMAT 500MG @10 TAB', 135, 300),
-(3, 4, 4, 'AMPICILLIN 500MG @10TAB', 245, 200);
 
 -- --------------------------------------------------------
 
@@ -175,16 +158,6 @@ CREATE TABLE `products` (
   `ket_product` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `products`
---
-
-INSERT INTO `products` (`id_product`, `name_product`, `beli_product`, `jual_product`, `stok_product`, `satuan_id`, `ket_product`) VALUES
-(2, 'PARACETAMOL 500MG @10 TAB', 145, 300, 190, 2, 'anagetik'),
-(3, 'ASAM MEFENAMAT 500MG @10 TAB', 135, 300, 290, 2, 'analgetik'),
-(4, 'AMPICILLIN 500MG @10TAB', 245, 500, 0, 2, 'antibiotik'),
-(5, 'AMOXICILLIN 500MG @10TAB', 245, 500, 0, 2, 'antibiotik');
-
 -- --------------------------------------------------------
 
 --
@@ -215,13 +188,6 @@ CREATE TABLE `satuans` (
   `name_satuan` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `satuans`
---
-
-INSERT INTO `satuans` (`id_satuan`, `name_satuan`) VALUES
-(2, 'STRIP');
-
 -- --------------------------------------------------------
 
 --
@@ -238,14 +204,6 @@ CREATE TABLE `sell` (
   `bayar_sell` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `sell`
---
-
-INSERT INTO `sell` (`id_sell`, `tgl_sell`, `name_customer`, `item_sell`, `total_sell`, `disk_sell`, `bayar_sell`) VALUES
-(6, '2019-12-06', 'UMUM', 3, 11000, 0, 11000),
-(7, '2019-12-06', 'UMUM', 1, 95000, 15, 80750);
-
 -- --------------------------------------------------------
 
 --
@@ -261,16 +219,6 @@ CREATE TABLE `sell_detail` (
   `product_qty` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `sell_detail`
---
-
-INSERT INTO `sell_detail` (`id_sdet`, `sell_id`, `product_id`, `product_name`, `product_price`, `product_qty`) VALUES
-(1, 6, 2, 'PARACETAMOL 500MG @10 TAB', 300, 10),
-(2, 6, 3, 'ASAM MEFENAMAT 500MG @10 TAB', 300, 10),
-(3, 6, 4, 'AMPICILLIN 500MG @10TAB', 500, 10),
-(4, 7, 4, 'AMPICILLIN 500MG @10TAB', 500, 190);
-
 -- --------------------------------------------------------
 
 --
@@ -279,6 +227,7 @@ INSERT INTO `sell_detail` (`id_sdet`, `sell_id`, `product_id`, `product_name`, `
 
 CREATE TABLE `spendings` (
   `id_spend` int(11) UNSIGNED NOT NULL,
+  `tgl_spend` date NOT NULL,
   `name_spend` varchar(255) NOT NULL,
   `total_spend` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -295,13 +244,6 @@ CREATE TABLE `suppliers` (
   `address_supplier` text DEFAULT NULL,
   `telp_supplier` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `suppliers`
---
-
-INSERT INTO `suppliers` (`id_supplier`, `name_supplier`, `address_supplier`, `telp_supplier`) VALUES
-(2, 'PT. KIMIA FARMA PBF', 'jalan kesuma bangsa\r\n', '085246805241');
 
 -- --------------------------------------------------------
 
@@ -410,13 +352,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `buys`
 --
 ALTER TABLE `buys`
-  MODIFY `id_buy` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_buy` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `buy_details`
 --
 ALTER TABLE `buy_details`
-  MODIFY `id_bdet` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_bdet` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `carts`
@@ -434,7 +376,7 @@ ALTER TABLE `cart_sell`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id_product` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_product` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `roles`
@@ -446,31 +388,31 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `satuans`
 --
 ALTER TABLE `satuans`
-  MODIFY `id_satuan` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_satuan` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `sell`
 --
 ALTER TABLE `sell`
-  MODIFY `id_sell` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_sell` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `sell_detail`
 --
 ALTER TABLE `sell_detail`
-  MODIFY `id_sdet` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_sdet` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `spendings`
 --
 ALTER TABLE `spendings`
-  MODIFY `id_spend` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_spend` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `suppliers`
 --
 ALTER TABLE `suppliers`
-  MODIFY `id_supplier` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_supplier` int(11) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`

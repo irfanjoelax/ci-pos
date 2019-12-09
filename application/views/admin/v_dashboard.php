@@ -43,7 +43,7 @@
                      <div class="h6 mb-0 font-weight-bold text-gray-800">Rp. <?= uang($total_sell) ?>,-</div>
                   </div>
                   <div class="col-auto">
-                     <i class="fas fa-file fa-2x text-gray-300"></i>
+                     <i class="fas fa-cart-plus fa-2x text-gray-300"></i>
                   </div>
                </div>
             </div>
@@ -60,7 +60,7 @@
                      <div class="h6 mb-0 font-weight-bold text-gray-800">Rp. <?= uang($total_buy) ?>,-</div>
                   </div>
                   <div class="col-auto">
-                     <i class="fas fa-cart-plus fa-2x text-gray-300"></i>
+                     <i class="fas fa-shopping-cart fa-2x text-gray-300"></i>
                   </div>
                </div>
             </div>
@@ -98,7 +98,7 @@
                      <div class="h6 mb-0 font-weight-bold text-gray-800">Rp. <?= uang($total_income) ?>,-</div>
                   </div>
                   <div class="col-auto">
-                     <i class="fas fa-dollar fa-2x text-gray-300"></i>
+                     <i class="fas fa-briefcase fa-2x text-gray-300"></i>
                   </div>
                </div>
             </div>
